@@ -13,7 +13,7 @@ To use the SDK, you will need an API key for Transpose. You can sign up for a fr
 To install the package, run the following command in your Python environment:
 
 ```bash
-pip install transpose-financial-analysis-sdk
+pip install transpose-defi-sdk
 ```
 
 The SDK requires Python 3.6 or higher and has only 4 dependencies:

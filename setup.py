@@ -3,7 +3,7 @@ with open('README.md', 'r') as f: long_description = f.read()
     
 setup(
     name='transpose_defi_sdk',
-    version='3.1.0',
+    version='1.0.0',
     
     # meta
     long_description=long_description,
