@@ -1,7 +1,7 @@
-class ChartConfigError(Exception):
+class ChartingError(Exception):
     """
-    The ChartConfigError exception class is raised for errors that 
-    occur when initializing the chart class.
+    The ChartingError exception class is raised for errors that 
+    occur when charting data.
     """
 
     def __init__(self, message: str) -> None:
@@ -21,7 +21,7 @@ class ChartConfigError(Exception):
         :return: The error message.
         """
         
-        return 'ChartConfigError ({})'.format(self.message)
+        return 'ChartingError ({})'.format(self.message)
 
 
 class TransposeAPIError(Exception):

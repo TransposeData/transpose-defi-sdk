@@ -28,19 +28,19 @@ def ohlc_query(chain: str, token_address: str, from_timestamp: str, to_timestmap
                 MAX(price) as _high,
                 MIN(block_number) as lbn,
                 MAX(block_number) as gbn
-            FROM ethereum.token_prices
+            FROM {chain}.token_prices
             WHERE token_address = '{token_address}'
             AND timestamp >= '{from_timestamp}'
             AND timestamp <= '{to_timestmap}'
             GROUP BY _date) AS agg
 
-            JOIN ethereum.token_prices AS max
+            JOIN {chain}.token_prices AS max
             ON token_address = '{token_address}'
             AND block_number = agg.lbn
             
-            JOIN ethereum.token_prices AS min
+            JOIN {chain}.token_prices AS min
             ON min.token_address = '{token_address}'
             AND min.block_number = agg.gbn
 
-        ORDER BY _date ASC
+        ORDER BY _date ASC;
         """
