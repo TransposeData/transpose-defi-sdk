@@ -1,3 +1,6 @@
+import pandas as pd
+
+from transpose.sql.ohlcv import ohlcv_query
 
 
 class Chart:
@@ -27,3 +30,5 @@ class Chart:
         :param timeframe: The timeframe to query.
         :return: The OHLCV data.
         """
+
+        
