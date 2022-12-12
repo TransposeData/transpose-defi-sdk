@@ -1,8 +1,8 @@
 # transpose-financial-analysis-sdk
 
-The Transpose Financial Analysis SDK is a simple Python package for charting generic token prices and performing similar financial analysis of on-chain data. At the moment, the only supported functionality is the ability to download or chart OHLC data for any token address on Ethereum, Goerli, and Polygon.
+The Transpose Financial Analysis SDK is a simple Python package for performing financial analysis of on-chain data using the real-time Transpose SQL API. At the moment, the only supported functionality is the ability to download or chart OHLC prices for any token on Ethereum, Goerli, and Polygon.
 
-The underlying price data is sourced for every token on the supported networks, regardless of centralized listing status, volume, or liquidity. This data is derived from DEX data across over 24 different DEXs, including Uniswap, Sushiswap, Balancer, and Curve, and nearly 200k DEX pools. The token prices are always normalized to accurate USD prices using Chainlink price feeds. The full list of supported DEXs can be in the [docs](https://docs.transpose.io/sql/tables/protocol-layer/dex-swaps/smoothyswap_dex_swaps/).
+The underlying price data is sourced for every token on the supported networks, regardless of centralized listing status, volume, or liquidity. This data is derived from DEX data across over 24 different DEXs, including Uniswap, Sushiswap, Balancer, and Curve, and nearly 200k DEX pools. The token prices are normalized to accurate USD prices using Chainlink price feeds. The full list of supported DEXs can be found in the [docs](https://docs.transpose.io/sql/tables/protocol-layer/dex-swaps/smoothyswap_dex_swaps/).
 
 ## Installation
 
@@ -11,6 +11,13 @@ To install the package, run the following command in your Python environment:
 ```bash
 pip install transpose-financial-analysis-sdk
 ```
+
+The SDK requires Python 3.6 or higher and only requires the following 4 packages:
+
+- `pandas`
+- `pip-chill`
+- `web3`
+- `plotly`
 
 ## Retrieving an API key
 
