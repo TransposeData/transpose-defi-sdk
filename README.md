@@ -4,6 +4,10 @@ The Transpose Financial Analysis SDK is a simple Python package for performing f
 
 The underlying price data is sourced for every token on the supported networks, regardless of centralized listing status, volume, or liquidity. This data is derived from DEX data across over 24 different DEXs, including Uniswap, Sushiswap, Balancer, and Curve, and nearly 200k DEX pools. The token prices are normalized to accurate USD prices using Chainlink price feeds. The full list of supported DEXs can be found in the [docs](https://docs.transpose.io/sql/tables/protocol-layer/dex-swaps/smoothyswap_dex_swaps/).
 
+## Retrieving an API key
+
+To use the SDK, you will need an API key for Transpose. You can sign up for a free API key by visting the [Transpose App](https://app.transpose.io). If you have any questions on getting started, feature requests, or contributing to the SDK, please reach out to us on [Discord](http://discord.gg/transpose).
+
 ## Installation
 
 To install the package, run the following command in your Python environment:
@@ -18,10 +22,6 @@ The SDK requires Python 3.6 or higher and has only 4 dependencies:
 - `pip-chill`
 - `web3`
 - `plotly`
-
-## Retrieving an API key
-
-To use the SDK, you will need an API key for Transpose. You can sign up for a free API key by visting the [Transpose App](https://app.transpose.io). If you have any questions on getting started, feature requests, or contributing to the SDK, please reach out to us on [Discord](http://discord.gg/transpose).
 
 ## Getting Started
 
