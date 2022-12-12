@@ -12,7 +12,7 @@ To install the package, run the following command in your Python environment:
 pip install transpose-financial-analysis-sdk
 ```
 
-The SDK requires Python 3.6 or higher and only requires the following 4 packages:
+The SDK requires Python 3.6 or higher and has only 4 dependencies:
 
 - `pandas`
 - `pip-chill`
@@ -27,9 +27,7 @@ To use the SDK, you will need an API key for Transpose. You can sign up for a fr
 
 ### Charting OHLC prices
 
-OHLC stands for open-high-low-close and is a common way to represent price data over fixed time intervals. For example, a chart of hourly OHLC prices for a token would show the open, high, low, and close prices for each hour.
-
-To start charting data, simply import and instantiate the `Chart` class from the SDK and call its `ohlc` method.
+OHLC stands for open-high-low-close and is a common way to represent price data over fixed time intervals. To start charting data, simply import and instantiate the `Chart` class from the SDK and call its `ohlc` method.
 
 ```python
 from transpose.chart import Chart
@@ -47,7 +45,7 @@ chart.ohlc(
 )
 ```
 
-The above code will generate a chart of hourly OHLC prices for WETH from January 1st, 2021 to February 1st, 2021. The address for WETH could be replaced with any valid token address on the supported chains.
+The above code will generate a chart of hourly OHLC prices for Wrapped Ether (WETH) during the month of January 2021. The address for WETH can be replaced with any token address on the supported chains.
 
 By default, Plotly will automatically render the chart in your browser. If you would like to save the chart as a HTML file, you can pass the `save_as` parameter to the `ohlc` method:
 
@@ -64,7 +62,7 @@ chart.ohlc(
 
 ### Downloading OHLC data
 
-To return the data directly as a Pandas DataFrame, you can pass the `return_df` parameter to the `ohlc` method:
+To return the data directly as a Pandas DataFrame from the `ohlc` method rather than charting, you may pass the optional `return_df` parameter:
 
 ```python
 price_df = chart.ohlc(
@@ -77,14 +75,14 @@ price_df = chart.ohlc(
 )
 ```
 
-The `price_df` DataFrame will contain a timestamp column and four price columns: `open`, `high`, `low`, and `close`.
+The `price_df` DataFrame will contain a timestamp index and four columns for the OHLC prices: `open`, `high`, `low`, and `close`.
 
 ### Charting Options
 
 The `ohlc` method accepts a number of optional parameters to customize the chart. The following parameters are available:
 
-- `chain`: The blockchain network to query. Supported values are `ethereum`, `goerli`, and `polygon`.
-- `token_address`: The address of the token to chart.
-- `from_timestamp`: The start date for the chart. This can be a string in the format `YYYY-MM-DD` or a Unix timestamp.
-- `to_timestamp`: The end date for the chart. This can be a string in the format `YYYY-MM-DD` or a Unix timestamp.
-- `timeframe`: The time interval to chart. Supported values are `minute`, `hour`, and `day`.
+- `chain`: The blockchain network to query (`ethereum`, `goerli`, or `polygon`).
+- `token_address`: The address of the token to chart (must be a valid 42-character hex addres).
+- `from_timestamp`: The start date for the chart (supports common string formats and Unix timestamps).
+- `to_timestamp`: The end date for the chart (supports common string formats and Unix timestamps).
+- `timeframe`: The time interval to chart (`day`, `hour`, or `minute`).
