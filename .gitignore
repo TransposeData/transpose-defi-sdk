@@ -3,3 +3,5 @@ env
 .pyc
 __pycache__
 .html
+dist
+transpose_defi_sdk.egg-info
