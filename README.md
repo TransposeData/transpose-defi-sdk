@@ -14,7 +14,7 @@ pip install transpose-financial-analysis-sdk
 
 ## Retrieving an API key
 
-To use the SDK, you will need an API key for Transpose. You can sign up for a free API key by visting the [Transpose App](https://app.transpose.io). If you have any questions on getting started, feature requests, or contributing to the SDK, please reach out to us on [Discord]([Discord](http://discord.gg/transpose)).
+To use the SDK, you will need an API key for Transpose. You can sign up for a free API key by visting the [Transpose App](https://app.transpose.io). If you have any questions on getting started, feature requests, or contributing to the SDK, please reach out to us on [Discord](http://discord.gg/transpose).
 
 ## Getting Started
 
