@@ -1,3 +1,29 @@
+class ChartConfigError(Exception):
+    """
+    The ChartConfigError exception class is raised for errors that 
+    occur when initializing the chart class.
+    """
+
+    def __init__(self, message: str) -> None:
+        """
+        Initialize the exception class.
+
+        :param message: The error message.
+        """
+        
+        self.message = message
+
+    
+    def __str__(self) -> str:
+        """
+        Return the string-formated error message.
+
+        :return: The error message.
+        """
+        
+        return 'ChartConfigError ({})'.format(self.message)
+
+
 class TransposeAPIError(Exception):
     """
     The TransposeAPIError exception class is raised for errors that occur 
