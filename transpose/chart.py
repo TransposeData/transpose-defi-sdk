@@ -39,19 +39,22 @@ class Chart:
 
 
     def ohlc(self, chain: str, token_address: str, from_timestamp: str, to_timestamp: str, timeframe: str,
-             return_raw_data: bool=False) -> Optional[pd.DataFrame]:
+             save_as: str=None,
+             return_df: bool=False) -> Optional[pd.DataFrame]:
 
         """
         Returns OHLC data for a given token address, time range, and timeframe. To return the raw
-        DataFrame instead of charting the OHLC data, set return_raw_data to True.
+        DataFrame instead of charting the OHLC data, set return_df to True. To save the chart
+        as an HTML file, set save_as to a valid path.
 
         :param chain: The chain to query.
         :param token_address: The token address to query.
         :param from_timestamp: The start of the time range to query.
         :param to_timestamp: The end of the time range to query.
         :param timeframe: The timeframe to query.
-        :param return_raw_data: Whether to return the raw DataFrame instead of charting the OHLC data.
-        :return: The OHLC data as a DataFrame if return_raw_data is True, otherwise None.
+        :param save_as: The path to save the HTML chart to.
+        :param return_df: Whether to return the OHLC data as a DataFrame instead of charting it.
+        :return: The OHLC data as a DataFrame if return_df is True, otherwise None.
         """
 
         # validate chain
@@ -92,7 +95,7 @@ class Chart:
         ohlc_df.index = pd.to_datetime(ohlc_df.index)
 
         # return raw data
-        if return_raw_data: 
+        if return_df: 
             return ohlc_df
 
         # chart data
@@ -104,6 +107,12 @@ class Chart:
             yaxis_title=f'{token_symbol} Price (USD)',
             xaxis_title='Datetime (UTC)'
         )
+
+        # return HTML chart
+        if save_as:
+            try: fig.write_html(save_as)
+            except Exception as e: raise ChartingError('Failed to save HTML chart') from e
+            return
 
         # display chart
         fig.show()
