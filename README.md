@@ -86,3 +86,5 @@ The `ohlc` method accepts a number of optional parameters to customize the chart
 - `from_timestamp`: The start date for the chart (supports common string formats and Unix timestamps).
 - `to_timestamp`: The end date for the chart (supports common string formats and Unix timestamps).
 - `timeframe`: The time interval to chart (`day`, `hour`, or `minute`).
+- `save_as`: The path to save the chart as a HTML file.
+- `return_df`: Whether to return the data as a Pandas DataFrame rather than charting.
