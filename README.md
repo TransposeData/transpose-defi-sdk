@@ -33,7 +33,7 @@ OHLC stands for open-high-low-close and is a common way to represent price data 
 from transpose.chart import Chart
 
 # initialize Chart with your API key
-chart = Chart(api_key='enP9LfNUmGt0WRg1LNG4nSYK2MC1waEH')
+chart = Chart(api_key='YOUR API KEY')
 
 # chart OHLC data for a token
 chart.ohlc(

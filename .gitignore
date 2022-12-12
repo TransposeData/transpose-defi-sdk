@@ -5,3 +5,4 @@ __pycache__
 .html
 dist
 transpose_defi_sdk.egg-info
+test.py
