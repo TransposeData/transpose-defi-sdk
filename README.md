@@ -27,7 +27,7 @@ The SDK requires Python 3.6 or higher and has only 4 dependencies:
 
 ### Charting OHLC prices
 
-OHLC stands for open-high-low-close and is a common way to represent price data over fixed time intervals. To start charting data, simply import and instantiate the `Chart` class from the SDK and call its `ohlc` method.
+OHLC stands for open-high-low-close and is a common way to represent price data over fixed time intervals. To start charting data, simply import and instantiate the `Chart` class from the SDK and call its `ohlc` method:
 
 ```python
 from transpose.chart import Chart
